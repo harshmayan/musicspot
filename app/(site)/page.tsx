@@ -29,7 +29,7 @@ export default async function Home() {
               font-semibold
             "
           >
-            Welcome back
+            Welcome back to Musicspot
           </h1>
           <div
             className="
