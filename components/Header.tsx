@@ -44,6 +44,10 @@ const Header: React.FC<HeaderProps> =  ({
         // Redirect to the SearchInput component
         router.push('/search'); // Replace 'searchinput' with your actual route
     };
+    const handleHomeClick = () => {
+        // Redirect to the HomeInput component
+        router.push('/'); // Replace 'homeinput' with your actual route
+    };
 
     return (
         <div
@@ -108,6 +112,7 @@ const Header: React.FC<HeaderProps> =  ({
                 </div>
                 <div className="flex md:hidden gap-x-2 items-center">
                     <button
+                        onClick={handleHomeClick}
                         className="
                             rounded-full
                             p-2
@@ -122,8 +127,8 @@ const Header: React.FC<HeaderProps> =  ({
                         <HiHome className="text-black" size={20} />
                     </button>
                     <button
+                        onClick={handleSearchClick}
                         className="
-                            onClick={handleSearchClick}
                             rounded-full
                             p-2
                             bg-white
