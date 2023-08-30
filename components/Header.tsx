@@ -40,6 +40,11 @@ const Header: React.FC<HeaderProps> =  ({
         }
     }
 
+    const handleSearchClick = () => {
+        // Redirect to the SearchInput component
+        router.push('/search'); // Replace 'searchinput' with your actual route
+    };
+
     return (
         <div
             className=
@@ -118,6 +123,7 @@ const Header: React.FC<HeaderProps> =  ({
                     </button>
                     <button
                         className="
+                            onClick={handleSearchClick}
                             rounded-full
                             p-2
                             bg-white
