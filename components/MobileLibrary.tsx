@@ -12,11 +12,11 @@ import useOnPlay from "@/hooks/useOnPlay";
 
 import MediaItem from "./MediaItem";
 
-interface LibraryProps {
+interface MobileLibraryProps {
   songs: Song[];
 }
 
-const Library: React.FC<LibraryProps> = ({
+const MobileLibrary: React.FC<MobileLibraryProps> = ({
   songs
 }) => {
   const { user} = useUser();
@@ -66,4 +66,4 @@ const Library: React.FC<LibraryProps> = ({
    );
 }
  
-export default Library;
+export default MobileLibrary;

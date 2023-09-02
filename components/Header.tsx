@@ -10,8 +10,8 @@ import Button from "./Button";
 import useAuthModal from "@/hooks/useAuthModal";
 import { useSupabaseClient} from "@supabase/auth-helpers-react";
 import { useUser } from "@/hooks/useUser";
-import { FaUserAlt } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { MdLibraryMusic } from "react-icons/md"
 
 interface HeaderProps {
     children: React.ReactNode;
@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> =  ({
     const router = useRouter();
 
     const supabaseClient = useSupabaseClient();
-    const { user, subscription } = useUser();
+    const { user } = useUser();
 
     const handleLogout = async () => {
         const { error } = await supabaseClient.auth.signOut();
@@ -47,6 +47,10 @@ const Header: React.FC<HeaderProps> =  ({
     const handleHomeClick = () => {
         // Redirect to the HomeInput component
         router.push('/'); // Replace 'homeinput' with your actual route
+    };
+    const handleLibraryClick = () => {
+        // Redirect to the HomeInput component
+        router.push('/mobilelibrary'); // Replace 'homeinput' with your actual route
     };
 
     return (
@@ -141,6 +145,21 @@ const Header: React.FC<HeaderProps> =  ({
                     >
                         <BiSearch className="text-black" size={20} />
                     </button>
+                    <button
+                        onClick={handleLibraryClick}
+                        className="
+                            rounded-full
+                            p-2
+                            bg-white
+                            flex
+                            items-center
+                            justify-center
+                            hover:opacity-75
+                            transition    
+                        "
+                    >
+                        <MdLibraryMusic className="text-black" size={20} />
+                    </button>
                 </div>
                 <div
                     className="
@@ -157,12 +176,6 @@ const Header: React.FC<HeaderProps> =  ({
                                 className="bg-white px-6 py-2"
                             >
                                 Logout
-                            </Button>
-                            <Button
-                                onClick={handleHomeClick}
-                                className="bg-white"
-                            >
-                                <FaUserAlt />
                             </Button>
                             
                         </div>
