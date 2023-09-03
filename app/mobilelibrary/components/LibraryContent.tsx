@@ -51,9 +51,9 @@ const LibraryContent: React.FC<LibraryContentProps> = ({ songs }) => {
           onClick={onClick}
           size={20}
           className="
-            text-white 
+            text-neutral-400 
             cursor-pointer 
-            hover:text-neutral-400 
+            hover:text-white 
             transition
           "
         />
