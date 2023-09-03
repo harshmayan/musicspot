@@ -41,16 +41,17 @@ const Header: React.FC<HeaderProps> =  ({
     }
 
     const handleSearchClick = () => {
-        // Redirect to the SearchInput component
-        router.push('/search'); // Replace 'searchinput' with your actual route
+        router.push('/search');
     };
     const handleHomeClick = () => {
-        // Redirect to the HomeInput component
-        router.push('/'); // Replace 'homeinput' with your actual route
+        router.push('/');
     };
     const handleLibraryClick = () => {
-        // Redirect to the HomeInput component
-        router.push('/mobilelibrary'); // Replace 'homeinput' with your actual route
+        if (!user) {
+            return authModal.onOpen();
+        } else {
+            router.push('/mobilelibrary');
+        }
     };
 
     return (
