@@ -38,7 +38,7 @@ const LibraryContent: React.FC<LibraryContentProps> = ({ songs }) => {
     if (!isLoading && !user) {
       return authModal.onOpen();
     }
-  }, [isLoading, user, router]);
+  }, [isLoading, user, authModal]);
 
   return (
     <div className="flex flex-col">
