@@ -25,6 +25,7 @@ const Player = () => {
                 py-2
                 h-[80px]
                 px-4
+                mb-4
             "
         >
             <PlayerContent 

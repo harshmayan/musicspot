@@ -124,22 +124,12 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
       </div>
       {/* Mobile controls */}
       <div className="flex md:hidden col-auto w-full justify-end items-center gap-x-3">
-        <AiFillStepBackward
-          size={20}
-          className="text-neutral-400 cursor-pointer hover:text-white transition"
-          onClick={onPlayPrevious}
-        />
         <div
           onClick={handlePlay}
-          className="h-10 w-10 flex justify-center items-center rounded-full bg-white p-1 cursor-pointer"
+          className="h-7 w-7 flex justify-center items-center rounded-full bg-white p-1 cursor-pointer"
         >
           <PlayPauseIcon size={20} className="text-black" />
         </div>
-        <AiFillStepForward
-          size={20}
-          className="text-neutral-400 cursor-pointer hover:text-white transition"
-          onClick={onPlayNext}
-        />
       </div>
       <div className="md:hidden w-full">
         <div className="w-full flex items-center justify-center flex-row gap-x-2 pb-2 grow-0 shrink-0">
