@@ -34,7 +34,7 @@ const Sidebar = ({ children, songs }: SidebarProps) => {
       label: 'Search',
       href: '/search',
       active: pathname === '/search'
-    },
+    }
   ], [pathname]);
 
   return (
