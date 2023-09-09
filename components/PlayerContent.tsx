@@ -131,19 +131,6 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
           <PlayPauseIcon size={20} className="text-black" />
         </div>
       </div>
-      <div className="md:hidden w-full">
-        <div className="w-full flex items-center justify-center flex-row gap-x-2 pb-2 grow-0 shrink-0">
-          <div className="text-xs text-neutral-400 w-[50px] flex justify-end">
-            {convertSecToTime(getSeek())}
-          </div>
-          <div className="w-full">
-            <MusicRangeSlider value={rangeValue} onChange={handleOnSeek} />
-          </div>
-          <div className="text-xs text-neutral-400 w-[50px] flex justify-start">
-            {convertSecToTime(getDuration())}
-          </div>
-        </div>
-      </div>
       {/* Desktop controls */}
       <div className="hidden h-full md:flex items-center justify-center flex-col gap-y-0.5">
         <div className="h-full flex justify-center items-center w-full max-w-[722px] gap-x-6">
