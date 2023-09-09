@@ -188,8 +188,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
             onClick={onPlayNext}
         />  
       </div>
-      <div className="md:hidden flex w-full justify-start items-center gap-x-3">
-      <div className="w-full flex items-center justify-center flex-row gap-x-2 pb-2 grow-0 shrink-0">
+      <div className="md:hidden flex flex-row w-full justify-start items-center gap-x-3 grow-0 shrink-0">
           <div className="text-xs text-neutral-400 w-[50px] flex justify-end">
             {convertSecToTime(getSeek())}
           </div>
@@ -199,7 +198,6 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
           <div className="text-xs text-neutral-400 w-[50px] flex justify-start">
             {convertSecToTime(getDuration())}
           </div>
-        </div>
       </div>
     </div>
   );
