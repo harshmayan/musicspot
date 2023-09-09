@@ -124,12 +124,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
       </div>
       {/* Mobile controls */}
       <div className="flex md:hidden col-auto w-full justify-end items-center gap-x-3">
-        <div
-          onClick={handlePlay}
-          className="h-7 w-7 flex justify-center items-center rounded-full bg-white p-1 cursor-pointer"
-        >
-          <PlayPauseIcon size={20} className="text-black" />
-        </div>
+        
       </div>
       {/* Desktop controls */}
       <div className="hidden h-full md:flex items-center justify-center flex-col gap-y-0.5">
@@ -172,6 +167,38 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
             size={25}
           />
           <Slider value={volume} onChange={(value) => setVolume(value)} />
+        </div>
+      </div>
+      {/* only show on mobile */}
+      <div className="md:hidden flex w-full justify-start col-auto items-center gap-x-3 ">
+        <AiFillStepBackward
+            size={20}
+            className="text-neutral-400 cursor-pointer hover:text-white transition"
+            onClick={onPlayPrevious}
+        />
+        <div
+          onClick={handlePlay}
+          className="h-7 w-7 flex justify-center items-center rounded-full bg-white p-1 cursor-pointer"
+        >
+          <PlayPauseIcon size={30} className="text-black" />
+        </div>
+        <AiFillStepForward
+            size={20}
+            className="text-neutral-400 cursor-pointer hover:text-white transition"
+            onClick={onPlayNext}
+        />  
+      </div>
+      <div className="md:hidden flex w-full justify-start items-center gap-x-2">
+      <div className="w-full flex items-center justify-center flex-row gap-x-2 pb-2 grow-0 shrink-0">
+          <div className="text-xs text-neutral-400 w-[50px] flex justify-end">
+            {convertSecToTime(getSeek())}
+          </div>
+          <div className="w-full">
+            <MusicRangeSlider value={rangeValue} onChange={handleOnSeek} />
+          </div>
+          <div className="text-xs text-neutral-400 w-[50px] flex justify-start">
+            {convertSecToTime(getDuration())}
+          </div>
         </div>
       </div>
     </div>
