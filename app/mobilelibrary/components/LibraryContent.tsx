@@ -36,9 +36,9 @@ const LibraryContent: React.FC<LibraryContentProps> = ({ songs }) => {
 
   useEffect(() => {
     if (!isLoading && !user) {
-      return authModal.onOpen();
+        router.replace('/');
     }
-  }, [isLoading, user, authModal]);
+  }, [isLoading, user, router]);
 
   return (
     <div className="flex flex-col">
